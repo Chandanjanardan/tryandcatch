@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>OTPLESS Login</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./login.css">
+ 
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <button>Log In</button>
+    <br/>
+        <p id="or">---------------<span>OR</span>---------------</p>
+        <div id="otpless">
+         
+        </div>
+    </form>
+    <script type="text/javascript" src="https://otpless.com/auth.js"></script>
+<!-- Get user's whatsapp number and name -->
+<script type="text/javascript">
+    function otpless(otplessUser) {
+     var waName = otplessUser.waName;
+     var waNumber = otplessUser.waNumber;
+     
+     // display a welcome message with the user's name
+     const welcomeMsg = document.createElement('p');
+     welcomeMsg.textContent = `Hello ${waName}, welcome back!`;
+     document.body.appendChild(welcomeMsg);
+  
+     // redirect to index.html after 3 seconds
+     setTimeout(function() {
+       window.location.href = 'hero.html';
+     }, 3000);
+    }
+  </script>
+</body>
+</html>
